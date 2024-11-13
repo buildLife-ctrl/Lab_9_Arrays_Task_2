@@ -18,7 +18,9 @@ public class LinearSearch {
             System.out.println("Value " + position + " | " + num[i]);
         }
 
-        int inputValue = InputHelper.getRangedInt(scan, "Enter a random number between 1 and 100:", 1, 100);
+        //user inputs value for us to find
+        int inputValue = InputHelper.getRangedInt(scan, "Enter a random number between 1 and 100 for us to find:", 1, 100);
+        //finds how many times the value is shown and finds the position of the value the first time it is shown
         for (int i = 0; i < num.length; i++) {
             if (inputValue == num[i]) {
                 arrayPosition = i;
@@ -30,6 +32,7 @@ public class LinearSearch {
             }
         }
 
+        //if the value is not found, states it, otherwise outputs the amount of times the value exists
         if (arrayPosition == 0) {
             System.out.println("Your value does not exist in this set of integers.");
         } else {
