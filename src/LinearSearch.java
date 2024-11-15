@@ -26,17 +26,34 @@ public class LinearSearch {
                 arrayPosition = i;
                 valuePostition = i + 1;
                 valueAmount++;
-                if (valueAmount == 1) {
-                    System.out.println("The number " + inputValue + " was found at array position " + arrayPosition + " and value position " + valuePostition + ".");
-                }
+                System.out.println("The number " + inputValue + " was found at array position " + arrayPosition + " and value position " + valuePostition + ".");
             }
         }
-
         //if the value is not found, states it, otherwise outputs the amount of times the value exists
         if (arrayPosition == 0) {
             System.out.println("Your value does not exist in this set of integers.");
         } else {
             System.out.println("The number " + inputValue + " was found " + valueAmount + " times.");
+        }
+
+        //resets for 2nd time
+        arrayPosition = 0;
+        valuePostition = 0;
+        //second time it asks
+        int inputValue2 = InputHelper.getRangedInt(scan, "\nEnter a random number between 1 and 100 for us to find:", 1, 100);
+        //finds the place of the first inputted value.
+        for (int i = 0; i < num.length; i++) {
+            if (inputValue2 == num[i]) {
+                arrayPosition = i;
+                valuePostition = i + 1;
+                break;
+            }
+        }
+        //states where the first inputted value was found
+        if (arrayPosition == 0) {
+            System.out.println("Your value does not exist in this set of integers.");
+        } else {
+            System.out.println("The number " + inputValue2 + " was found at array position " + arrayPosition + " and value position " + valuePostition + ".");
         }
     }
 }
